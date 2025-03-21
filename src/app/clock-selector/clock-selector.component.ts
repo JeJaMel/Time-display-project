@@ -1,6 +1,5 @@
-// clock-selector.component.ts
 import { Component, EventEmitter, Output } from '@angular/core';
-import { CommonModule } from '@angular/common'; // Import CommonModule
+import { CommonModule } from '@angular/common'; 
 
 @Component({
   selector: 'app-clock-selector',
@@ -10,7 +9,7 @@ import { CommonModule } from '@angular/common'; // Import CommonModule
     </select>
   `,
   standalone: true,
-  imports: [CommonModule], // Add CommonModule to imports
+  imports: [CommonModule], 
 })
 export class ClockSelectorComponent {
   @Output() clockTypeChanged = new EventEmitter<string>();

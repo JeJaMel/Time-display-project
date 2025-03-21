@@ -6,4 +6,5 @@
   <app-digital-clock *ngIf="selectedClock === 'Digital'" [time]="currentTime"></app-digital-clock>
   <app-binary-clock *ngIf="selectedClock === 'Binary'" [time]="currentTime"></app-binary-clock>
   <app-textual-clock *ngIf="selectedClock === 'Textual'" [time]="currentTime"></app-textual-clock>
+  <app-bar-clock *ngIf="selectedClock === 'Bar Graph'" [time]="currentTime"></app-bar-clock>
 </div>

@@ -8,23 +8,33 @@ import { Subscription } from 'rxjs';
 import { TimeSliderComponent } from '../../time-slider/time-slider.component';
 import { TextualClockComponent } from '../textual-clock/textual-clock.component';
 import { NgIf } from '@angular/common';
+import { BarClockComponent } from '../bar-clock/bar-clock.component';
 
 @Component({
   selector: 'app-clock',
   standalone: true,
   templateUrl: './clock.component.html',
   styleUrls: ['./clock.component.css'],
-  imports: [ClockSelectorComponent, AnalogClockComponent, DigitalClockComponent, BinaryClockComponent, TimeSliderComponent, TextualClockComponent, NgIf]
+  imports: [
+    ClockSelectorComponent,
+    AnalogClockComponent,
+    DigitalClockComponent,
+    BinaryClockComponent,
+    TimeSliderComponent,
+    TextualClockComponent,
+    NgIf,
+    BarClockComponent,
+  ],
 })
 export class ClockComponent implements OnInit, OnDestroy {
   selectedClock: string = 'Analog';
   currentTime: Date = new Date();
-  private timeSubscription: Subscription = new Subscription;
+  private timeSubscription: Subscription = new Subscription();
 
   constructor(private timeService: TimeService) {}
 
   ngOnInit(): void {
-    this.timeSubscription = this.timeService.currentTime$.subscribe(time => {
+    this.timeSubscription = this.timeService.currentTime$.subscribe((time) => {
       this.currentTime = time;
     });
   }

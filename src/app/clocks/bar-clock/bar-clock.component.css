@@ -1,0 +1,43 @@
+/* bar-clock.component.css */
+.bar-clock {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  max-width: 300px;
+}
+
+.time-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.bar-container {
+  height: 15px;
+  background-color: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative; /* For positioning the bar */
+}
+
+.bar {
+  height: 100%;
+  background-color: #007bff; /* Blue for the bar */
+  border-radius: 5px;
+  transition: width 0.3s ease-in-out; /* Smooth transition */
+}
+
+.time-value {
+  margin-top: 5px;
+  font-size: 0.9em;
+  color: #777;
+}
