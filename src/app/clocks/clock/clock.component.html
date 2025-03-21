@@ -1,1 +1,9 @@
-<app-clock-selector></app-clock-selector>
+<div class="clock-container">
+  <app-time-slider (timeChanged)="onTimeChanged($event)"></app-time-slider>
+  <app-clock-selector (clockTypeChanged)="onClockTypeChanged($event)"></app-clock-selector>
+
+  <app-analog-clock *ngIf="selectedClock === 'Analog'" [time]="currentTime"></app-analog-clock>
+  <app-digital-clock *ngIf="selectedClock === 'Digital'" [time]="currentTime"></app-digital-clock>
+  <app-binary-clock *ngIf="selectedClock === 'Binary'" [time]="currentTime"></app-binary-clock>
+  <app-textual-clock *ngIf="selectedClock === 'Textual'" [time]="currentTime"></app-textual-clock>
+</div>

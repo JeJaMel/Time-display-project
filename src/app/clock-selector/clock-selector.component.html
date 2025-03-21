@@ -1,0 +1,3 @@
+<select (change)="onClockChange($event)">
+  <option *ngFor="let clock of clocks" [value]="clock">{{ clock }}</option>
+</select>

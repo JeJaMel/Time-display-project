@@ -1,0 +1,15 @@
+.binary-clock {
+  display: flex;
+  gap: 10px;
+}
+
+.binary-digit {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
