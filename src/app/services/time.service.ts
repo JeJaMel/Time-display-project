@@ -1,21 +1,12 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class TimeService {
+  private currentTime = new BehaviorSubject(new Date());
+  currentTime$ = this.currentTime.asObservable();
 
-  private _currentTime: BehaviorSubject<Date> = new BehaviorSubject(new Date());
-  currentTime$: Observable<Date> = this._currentTime.asObservable();
-
-  constructor() {
-    // setInterval(() => {
-    //   this.setTime(new Date());
-    // }, 1000);
-  }
-
-  setTime(newTime: Date) {
-    this._currentTime.next(newTime);
+  setTime(date: Date) {
+    this.currentTime.next(date);
   }
 }

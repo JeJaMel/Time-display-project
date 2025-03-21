@@ -1,53 +1,47 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'; // Import Router to navigate after login
 import { AuthService } from '../services/auth.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs'; 
+import { NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-auth',
-  imports: [],
-  templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.css']
+  standalone: true,
+  template: `
+    <div class="auth-container">
+      <h2>Login</h2>
+      <input type="email" [(ngModel)]="email" placeholder="Email">
+      <input type="password" [(ngModel)]="password" placeholder="Password">
+      <button (click)="login()">Login</button>
+      <button (click)="register()">Register</button>
+    </div>
+  `,
+  styles: [
+    `.auth-container { display: flex; flex-direction: column; max-width: 300px; margin: auto; }`,
+    `input { margin: 5px 0; padding: 8px; font-size: 14px; }`,
+    `button { margin: 5px 0; padding: 10px; font-size: 14px; cursor: pointer; }`
+  ],
+  imports: [NgIf, FormsModule],
 })
 export class AuthComponent {
-  authForm: FormGroup;
-  isLoginMode = true;
-  errorMessage: string | null = null;
+  email: string = '';
+  password: string = '';
 
-  constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) {
-    this.authForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
-    });
+  constructor(private authService: AuthService, private router: Router) {}
+
+  login() {
+    this.authService.login(this.email, this.password)
+      .then(() => {
+        this.router.navigate(['/clock']); // Redirect on success
+      })
+      .catch(error => console.error(error));
   }
 
-  onSubmit() {
-    if (this.authForm.invalid) {
-      return;
-    }
-
-    const email = this.authForm.value.email;
-    const password = this.authForm.value.password;
-
-    let authObs: Observable<any>;
-
-    if (this.isLoginMode) {
-      authObs = this.authService.login(email, password);
-    } else {
-      authObs = this.authService.register(email, password);
-    }
-
-    authObs.subscribe((result: any) => { 
-      if (result.error) {
-        this.errorMessage = result.error;
-      } else {
-        this.router.navigate(['/clock']); // Redirect to clock after successful auth
-      }
-    });
-  }
-
-  switchMode() {
-    this.isLoginMode = !this.isLoginMode;
+  register() {
+    this.authService.register(this.email, this.password)
+      .then(() => {
+        this.router.navigate(['/clock']); // Redirect on success
+      })
+      .catch(error => console.error(error));
   }
 }

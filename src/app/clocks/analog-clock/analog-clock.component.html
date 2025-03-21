@@ -1,1 +1,6 @@
-<p>analog-clock works!</p>
+<div class="clock">
+  <div class="hand hour-hand" [style.transform]="'rotate(' + hourRotation + 'deg)'"></div>
+  <div class="hand minute-hand" [style.transform]="'rotate(' + minuteRotation + 'deg)'"></div>
+  <div class="hand second-hand" [style.transform]="'rotate(' + secondRotation + 'deg)'"></div>
+  <div class="center"></div>
+</div>

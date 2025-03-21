@@ -1,53 +1,30 @@
-import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, User } from '@angular/fire/auth';
-import { Observable, from, of } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { Injectable, inject } from '@angular/core';
+import { Auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, user } from '@angular/fire/auth';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class AuthService {
-  user$: Observable<User | null>;
+  private auth = inject(Auth);
 
-  constructor(private auth: Auth) {
-    this.user$ = new Observable(subscriber => {
-      const unsubscribe = this.auth.onAuthStateChanged(user => {
-        subscriber.next(user);
-      }, error => {
-        subscriber.error(error);
-      });
-      return () => unsubscribe(); // Cleanup on unsubscribe
-    });
+  constructor(private router: Router) {}
+
+  login(email: string, password: string): Promise<any> {
+    return signInWithEmailAndPassword(this.auth, email, password);
   }
 
-  register(email: string, password: string): Observable<any> { 
-    return from(createUserWithEmailAndPassword(this.auth, email, password)).pipe(
-      catchError(error => {
-        console.error("Registration error:", error);
-        return of({ error: error.message }); // Return an error object
-      })
+  register(email: string, password: string): Promise<any> {
+    return createUserWithEmailAndPassword(this.auth, email, password);
+  }
+
+  logout(): Promise<any> {
+    return signOut(this.auth);
+  }
+
+  isAuthenticated(): Observable<boolean> {
+    return user(this.auth).pipe(
+      map(user => !!user) 
     );
-  }
-
-  login(email: string, password: string): Observable<any> {
-    return from(signInWithEmailAndPassword(this.auth, email, password)).pipe(
-      catchError(error => {
-        console.error("Login error:", error);
-        return of({ error: error.message });
-      })
-    );
-  }
-
-  logout(): Observable<any> {
-    return from(signOut(this.auth)).pipe(
-      catchError(error => {
-        console.error("Logout error:", error);
-        return of({ error: error.message }); // Return an error object
-      })
-    );
-  }
-
-  checkAuthStatus(): Observable<boolean> {
-    return this.user$.pipe(map(user => !!user));
   }
 }
