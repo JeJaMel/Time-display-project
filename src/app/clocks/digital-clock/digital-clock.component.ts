@@ -1,22 +1,25 @@
-import { Component, Input, OnChanges, SimpleChanges, Inject } from '@angular/core';
-import { ClockDisplay, CLOCK_DISPLAY } from '../clock-display.interface';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+
 @Component({
   selector: 'app-digital-clock',
   templateUrl: './digital-clock.component.html',
   styleUrls: ['./digital-clock.component.css'],
-   providers: [{ provide: CLOCK_DISPLAY, useExisting: DigitalClockComponent }],
 })
-export class DigitalClockComponent implements ClockDisplay, OnChanges {
+export class DigitalClockComponent implements OnChanges {
   @Input() time: Date = new Date();
   formattedTime: string = '';
 
-   ngOnChanges(changes: SimpleChanges): void {
-     if(changes['time']){
-        this.updateTime(this.time);
-     }
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['time']) {
+      this.updateTime(this.time);
+    }
   }
 
   updateTime(time: Date): void {
-    this.formattedTime = time.toLocaleTimeString();
+    const hours = time.getHours().toString().padStart(2, '0');
+    const minutes = time.getMinutes().toString().padStart(2, '0');
+    const seconds = time.getSeconds().toString().padStart(2, '0');
+    
+    this.formattedTime = `${hours}:${minutes}:${seconds}`;
   }
 }

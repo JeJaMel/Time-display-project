@@ -1,4 +1,28 @@
+.digital-clock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #282c34;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: fit-content;
+  padding: 20px 30px;
+}
+
 .digital-clock {
-  font-size: 2em;
-  font-family: monospace;
+  font-size: 3em;
+  font-family: 'Courier New', monospace;
+  color: #fff;
+  background-color: #333;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+.digital-clock:hover {
+  background-color: #444;
+  transform: scale(1.05);
 }

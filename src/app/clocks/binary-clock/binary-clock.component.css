@@ -1,15 +1,44 @@
 .binary-clock {
   display: flex;
-  gap: 10px;
+  gap: 20px; 
+  align-items: center;
+}
+
+.clock-section {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  border: 1px solid #ddd; 
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.binary-digit-column {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
 }
 
 .binary-digit {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: #ccc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 12px;
+  background-color: #ccc; 
+  margin: 2px;
 }
+
+.binary-digit.active {
+  background-color: #007bff; 
+}
+
+.binary-digit-column::before {
+  font-size: 0.7em;
+  color: #888;
+}
+
+.binary-digit-column:nth-child(1)::before { content: "32"; }
+.binary-digit-column:nth-child(2)::before { content: "16"; }
+.binary-digit-column:nth-child(3)::before { content: "8"; }
+.binary-digit-column:nth-child(4)::before { content: "4"; }
+.binary-digit-column:nth-child(5)::before { content: "2"; }
+.binary-digit-column:nth-child(6)::before { content: "1"; }
