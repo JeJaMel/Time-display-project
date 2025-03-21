@@ -1,13 +1,20 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-textual-clock',
   template: `
-    <div class="textual-clock">
-      It is {{ hourText }} hours, {{ minuteText }} minutes, and {{ secondText }} seconds.
+    <div class="textual-clock-container">
+        <div class="textual-clock">
+            <span class="hour">It is {{ hourText }} hours,</span>
+            <span class="minute"> {{ minuteText }} minutes,</span>
+            <span class="second">  and {{ secondText }} seconds.</span>
+        </div>
     </div>
   `,
+  styleUrls: ['./textual-clock.component.css'],
   standalone: true,
+  imports: [CommonModule]
 })
 export class TextualClockComponent implements OnChanges {
   @Input() time: Date = new Date();
