@@ -1,0 +1,22 @@
+<div class="morse-code-clock">
+    <div class="time-section">
+        <div class="time-label">Hours</div>
+        <div class="morse-sequence" *ngFor="let morse of morseHours">
+            <span class="morse-unit" *ngFor="let char of morse.split('')" [class.dot]="char === '.'"[class.dash]="char === '-'"></span>
+        </div>
+    </div>
+
+    <div class="time-section">
+        <div class="time-label">Minutes</div>
+        <div class="morse-sequence" *ngFor="let morse of morseMinutes">
+            <span class="morse-unit" *ngFor="let char of morse.split('')" [class.dot]="char === '.'"[class.dash]="char === '-'"></span>
+        </div>
+    </div>
+
+    <div class="time-section">
+        <div class="time-label">Seconds</div>
+        <div class="morse-sequence" *ngFor="let morse of morseSeconds">
+            <span class="morse-unit" *ngFor="let char of morse.split('')" [class.dot]="char === '.'"[class.dash]="char === '-'"></span>
+        </div>
+    </div>
+</div>

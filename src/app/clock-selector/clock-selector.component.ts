@@ -18,7 +18,7 @@ export class ClockSelectorComponent {
     'Digital',
     'Binary',
     'Textual',
-    'Roman',
+    'Morse Code',
     'Bar Graph',
     'Hexadecimal',
     'Dot Matrix',

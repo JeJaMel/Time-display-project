@@ -1,0 +1,50 @@
+.morse-code-clock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: max-content;
+    gap: 20px;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    font-family: 'Segoe UI', monospace;
+}
+
+.time-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; 
+}
+
+.time-label {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 1.3em; 
+}
+
+.morse-sequence {
+    display: flex;
+    justify-content: center; 
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.morse-unit {
+    height: 6px;
+    background-color: #333;
+    border-radius: 3px;
+    transition: all 0.2s ease-in-out;
+}
+
+.morse-unit.dot {
+    width: 6px; 
+    border-radius: 50%;
+}
+
+.morse-unit.dash {
+    width: 20px; 
+    border-radius: 3px;
+}
