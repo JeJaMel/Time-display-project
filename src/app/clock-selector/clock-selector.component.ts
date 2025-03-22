@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-clock-selector',
-  templateUrl: './clock-selector.component.html', //Use templateUrl
-  styleUrls: ['./clock-selector.component.css'], //Link to the CSS file
+  templateUrl: './clock-selector.component.html',
+  styleUrls: ['./clock-selector.component.css'], 
   standalone: true,
   imports: [CommonModule],
 })

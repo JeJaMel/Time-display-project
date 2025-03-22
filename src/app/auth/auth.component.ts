@@ -9,31 +9,30 @@ import { NgIf } from '@angular/common';
   standalone: true,
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.css'],
-  imports: [FormsModule, NgIf], // Add NgIf to imports
+  imports: [FormsModule, NgIf],
 })
 export class AuthComponent {
   email: string = '';
   password: string = '';
   emailError: string = '';
   passwordError: string = '';
-  isLoading: boolean = false; // Track loading state
+  isLoading: boolean = false; 
 
   constructor(private authService: AuthService, private router: Router) {}
 
   login() {
-    // Clear previous error and success messages
     this.emailError = '';
     this.passwordError = '';
-    this.isLoading = true; // Set loading to true
+    this.isLoading = true; 
 
     this.authService
       .login(this.email, this.password)
       .then(() => {
-        this.isLoading = false; // Set loading to false
+        this.isLoading = false; 
         this.router.navigate(['/clock']);
       })
       .catch((error: any) => {
-        this.isLoading = false; // Ensure loading is set to false on error
+        this.isLoading = false; 
         if (error.code === 'auth/invalid-email') {
           this.emailError = 'Invalid email address.';
         } else if (error.code === 'auth/wrong-password') {
@@ -48,19 +47,18 @@ export class AuthComponent {
   }
 
   register() {
-    // Clear previous error and success messages
     this.emailError = '';
     this.passwordError = '';
-    this.isLoading = true; // Set loading to true
+    this.isLoading = true;
 
     this.authService
       .register(this.email, this.password)
       .then(() => {
-        this.isLoading = false; // Set loading to false
+        this.isLoading = false; 
         this.router.navigate(['/clock']);
       })
       .catch((error: any) => {
-        this.isLoading = false; // Ensure loading is set to false on error
+        this.isLoading = false; 
         if (error.code === 'auth/email-already-in-use') {
           this.emailError = 'This email is already in use.';
         } else if (error.code === 'auth/weak-password') {

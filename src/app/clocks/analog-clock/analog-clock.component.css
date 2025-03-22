@@ -78,7 +78,6 @@
   transform: translateX(-50%) rotate(180deg);
 }
 
-/* Add numerals (for hours) */
 .clock-numbers {
   position: absolute;
   width: 100%;
