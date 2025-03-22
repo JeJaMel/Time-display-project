@@ -1,0 +1,40 @@
+/* clock-selector.component.css */
+.select-container {
+    position: relative;
+    display: inline-block;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.clock-select {
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none; /* For Safari */
+    width: 100%;
+    padding: 10px 30px 10px 15px; /* Space for text and arrow */
+    border: none;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 1em;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.clock-select:hover,
+.clock-select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Arrow Styling */
+.select-container::after {
+    content: '\25BC'; /* Down arrow Unicode character */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #555;
+    pointer-events: none; /* Make the arrow non-interactive */
+}

@@ -1,15 +1,12 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { CommonModule } from '@angular/common'; 
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-clock-selector',
-  template: `
-    <select (change)="onClockChange($event)">
-      <option *ngFor="let clock of clocks" [value]="clock">{{ clock }}</option>
-    </select>
-  `,
+  templateUrl: './clock-selector.component.html', //Use templateUrl
+  styleUrls: ['./clock-selector.component.css'], //Link to the CSS file
   standalone: true,
-  imports: [CommonModule], 
+  imports: [CommonModule],
 })
 export class ClockSelectorComponent {
   @Output() clockTypeChanged = new EventEmitter<string>();
