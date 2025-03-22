@@ -8,4 +8,5 @@
   <app-textual-clock *ngIf="selectedClock === 'Textual'" [time]="currentTime"></app-textual-clock>
   <app-bar-clock *ngIf="selectedClock === 'Bar Graph'" [time]="currentTime"></app-bar-clock>
   <app-dot-matrix-clock *ngIf="selectedClock === 'Dot Matrix'" [time]="currentTime"></app-dot-matrix-clock> 
+  <app-hexadecimal-clock *ngIf="selectedClock === 'Hexadecimal'" [time]="currentTime"></app-hexadecimal-clock>
 </div>

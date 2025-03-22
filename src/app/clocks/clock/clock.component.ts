@@ -10,6 +10,7 @@ import { TextualClockComponent } from '../textual-clock/textual-clock.component'
 import { NgIf } from '@angular/common';
 import { BarClockComponent } from '../bar-clock/bar-clock.component';
 import { DotMatrixClockComponent } from '../dot-matrix-clock/dot-matrix-clock.component';
+import { HexadecimalClockComponent } from '../hexadecimal-clock/hexadecimal-clock.component';
 
 @Component({
   selector: 'app-clock',
@@ -26,6 +27,7 @@ import { DotMatrixClockComponent } from '../dot-matrix-clock/dot-matrix-clock.co
     NgIf,
     BarClockComponent,
     DotMatrixClockComponent,
+    HexadecimalClockComponent,
   ],
 })
 export class ClockComponent implements OnInit, OnDestroy {
