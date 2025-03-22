@@ -14,6 +14,7 @@ import { HexadecimalClockComponent } from '../hexadecimal-clock/hexadecimal-cloc
 import { TetrisClockComponent } from "../tetris-clock/tetris-clock.component";
 import { SolarSystemClockComponent } from '../solar-system-clock/solar-system-clock.component';
 import { MorseCodeClockComponent } from '../morse-code-clock/morse-code-clock.component';
+import { UserEmailComponent } from '../../user-email/user-email.component';
 
 @Component({
   selector: 'app-clock',
@@ -33,7 +34,8 @@ import { MorseCodeClockComponent } from '../morse-code-clock/morse-code-clock.co
     HexadecimalClockComponent,
     TetrisClockComponent,
     SolarSystemClockComponent,
-    MorseCodeClockComponent
+    MorseCodeClockComponent,
+    UserEmailComponent,
 ],
 })
 export class ClockComponent implements OnInit, OnDestroy {

@@ -23,8 +23,10 @@ export class AuthService {
   }
 
   isAuthenticated(): Observable<boolean> {
-    return user(this.auth).pipe(
-      map(user => !!user) 
-    );
+    return user(this.auth).pipe(map((user) => !!user));
+  }
+
+  getUserEmail(): Observable<string | null> {
+    return user(this.auth).pipe(map((user) => (user ? user.email : null)));
   }
 }
