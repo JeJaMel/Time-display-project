@@ -20,10 +20,10 @@ export class ClockSelectorComponent {
     'Textual',
     'Roman',
     'Bar Graph',
-    'Pie Chart',
     'Hexadecimal',
     'Dot Matrix',
     'Tetris',
+    'Solar System',
   ];
 
   onClockChange(event: any) {

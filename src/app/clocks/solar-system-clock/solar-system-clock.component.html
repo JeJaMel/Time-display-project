@@ -1,0 +1,27 @@
+<div class="solar-system-clock">
+    <div class="sun"></div>
+
+    <div class="orbit hour-orbit">
+        <div class="planet hour-planet" [style.transform]="'rotate(' + hourRotation + 'deg) translateX(50px)'">
+            <div class="trail"></div>
+            <div class="trail"></div>
+            <div class="trail"></div>
+        </div>
+    </div>
+
+    <div class="orbit minute-orbit">
+        <div class="planet minute-planet" [style.transform]="'rotate(' + minuteRotation + 'deg) translateX(90px)'">
+            <div class="trail"></div>
+            <div class="trail"></div>
+            <div class="trail"></div>
+        </div>
+    </div>
+
+    <div class="orbit second-orbit">
+        <div class="planet second-planet" [style.transform]="'rotate(' + secondRotation + 'deg) translateX(130px)'">
+            <div class="trail"></div>
+            <div class="trail"></div>
+            <div class="trail"></div>
+        </div>
+    </div>
+</div>

@@ -12,6 +12,7 @@ import { BarClockComponent } from '../bar-clock/bar-clock.component';
 import { DotMatrixClockComponent } from '../dot-matrix-clock/dot-matrix-clock.component';
 import { HexadecimalClockComponent } from '../hexadecimal-clock/hexadecimal-clock.component';
 import { TetrisClockComponent } from "../tetris-clock/tetris-clock.component";
+import { SolarSystemClockComponent } from '../solar-system-clock/solar-system-clock.component';
 
 @Component({
   selector: 'app-clock',
@@ -30,6 +31,7 @@ import { TetrisClockComponent } from "../tetris-clock/tetris-clock.component";
     DotMatrixClockComponent,
     HexadecimalClockComponent,
     TetrisClockComponent,
+    SolarSystemClockComponent,
 ],
 })
 export class ClockComponent implements OnInit, OnDestroy {
