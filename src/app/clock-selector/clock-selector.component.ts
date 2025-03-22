@@ -21,9 +21,9 @@ export class ClockSelectorComponent {
     'Roman',
     'Bar Graph',
     'Pie Chart',
-    'World Clock (Timezone)',
     'Hexadecimal',
     'Dot Matrix',
+    'Tetris',
   ];
 
   onClockChange(event: any) {

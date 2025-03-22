@@ -11,6 +11,7 @@ import { NgIf } from '@angular/common';
 import { BarClockComponent } from '../bar-clock/bar-clock.component';
 import { DotMatrixClockComponent } from '../dot-matrix-clock/dot-matrix-clock.component';
 import { HexadecimalClockComponent } from '../hexadecimal-clock/hexadecimal-clock.component';
+import { TetrisClockComponent } from "../tetris-clock/tetris-clock.component";
 
 @Component({
   selector: 'app-clock',
@@ -28,7 +29,8 @@ import { HexadecimalClockComponent } from '../hexadecimal-clock/hexadecimal-cloc
     BarClockComponent,
     DotMatrixClockComponent,
     HexadecimalClockComponent,
-  ],
+    TetrisClockComponent,
+],
 })
 export class ClockComponent implements OnInit, OnDestroy {
   selectedClock: string = 'Analog';

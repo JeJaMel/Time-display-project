@@ -1,0 +1,45 @@
+.tetris-clock {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #000000;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+}
+
+.digit-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.row {
+  display: flex;
+}
+
+.block {
+  width: 20px;
+  height: 20px;
+  background-color: #000000;
+  border: 1px solid #000000;
+  animation: fall 0.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+.block.active {
+  background-color: #007bff;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

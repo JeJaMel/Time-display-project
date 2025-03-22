@@ -1,0 +1,8 @@
+<div class="tetris-clock">
+    <div class="digit-container" *ngFor="let digit of digitShapes">
+        <div class="row" *ngFor="let row of digit; let i = index">
+            <div class="block" *ngFor="let block of row; let j = index" [class.active]="block"
+                 [style.animationDelay]="(i * 0.2 + j * 0.1) + 's'"></div>
+        </div>
+    </div>
+</div>
