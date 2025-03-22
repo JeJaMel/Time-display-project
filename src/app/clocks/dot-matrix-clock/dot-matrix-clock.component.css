@@ -1,0 +1,36 @@
+.dot-matrix-clock {
+  display: flex;
+  gap: 12px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+}
+
+.digit-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.dot-row {
+  display: flex;
+  gap: 3px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dot.active {
+  background-color: #007bff;
+  transform: scale(1.1);
+}

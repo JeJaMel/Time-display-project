@@ -9,6 +9,7 @@ import { TimeSliderComponent } from '../../time-slider/time-slider.component';
 import { TextualClockComponent } from '../textual-clock/textual-clock.component';
 import { NgIf } from '@angular/common';
 import { BarClockComponent } from '../bar-clock/bar-clock.component';
+import { DotMatrixClockComponent } from '../dot-matrix-clock/dot-matrix-clock.component';
 
 @Component({
   selector: 'app-clock',
@@ -24,6 +25,7 @@ import { BarClockComponent } from '../bar-clock/bar-clock.component';
     TextualClockComponent,
     NgIf,
     BarClockComponent,
+    DotMatrixClockComponent,
   ],
 })
 export class ClockComponent implements OnInit, OnDestroy {
