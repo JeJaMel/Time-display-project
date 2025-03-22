@@ -42,3 +42,34 @@ h2 {
   color: #333;
   font-size: 2em;
 }
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 3px;
+}
+
+.loading-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #007bff;
+  border-radius: 4px 4px 0 0; 
+  animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

@@ -1,7 +1,17 @@
 <div class="auth-container">
+  <div *ngIf="isLoading" class="loading-bar"></div> <!-- Loading Bar -->
   <h2>Login</h2>
-  <input type="email" [(ngModel)]="email" placeholder="Email">
-  <input type="password" [(ngModel)]="password" placeholder="Password">
+
+  <div class="input-group">
+    <input type="email" [(ngModel)]="email" placeholder="Email">
+    <div *ngIf="emailError" class="error-message">{{ emailError }}</div>
+  </div>
+
+  <div class="input-group">
+    <input type="password" [(ngModel)]="password" placeholder="Password">
+    <div *ngIf="passwordError" class="error-message">{{ passwordError }}</div>
+  </div>
+
   <button (click)="login()">Login</button>
   <button (click)="register()">Register</button>
 </div>

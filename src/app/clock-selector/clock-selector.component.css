@@ -15,8 +15,9 @@
     background-color: #f0f0f0;
     color: #333;
     font-size: 1em;
+    font-weight: bold;
     cursor: pointer;
-    border: 1px solid #ddd;
+    border: 1px solid #007bff;
     border-radius: 5px;
     transition: border-color 0.3s;
     font-family: 'Segoe UI', sans-serif;
@@ -30,11 +31,11 @@
 
 /* Arrow Styling */
 .select-container::after {
-    content: '\25BC'; /* Down arrow Unicode character */
+    content: '\25BC'; 
     position: absolute;
     top: 50%;
     right: 10px;
     transform: translateY(-50%);
     color: #555;
-    pointer-events: none; /* Make the arrow non-interactive */
+    pointer-events: none; 
 }
