@@ -1,7 +1,7 @@
 <div class="app-container">
   <header class="top-bar">
     <h1>Time Display App</h1>
-    <button (click)="logout()">Logout</button> 
+    <button *ngIf="isOnClockRoute" (click)="logout()">Logout</button> 
   </header>
 
   <main class="main-content">
