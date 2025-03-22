@@ -11,7 +11,7 @@ import { NgIf } from '@angular/common';
 import { BarClockComponent } from '../bar-clock/bar-clock.component';
 import { DotMatrixClockComponent } from '../dot-matrix-clock/dot-matrix-clock.component';
 import { HexadecimalClockComponent } from '../hexadecimal-clock/hexadecimal-clock.component';
-import { TetrisClockComponent } from "../tetris-clock/tetris-clock.component";
+import { TetrisClockComponent } from '../tetris-clock/tetris-clock.component';
 import { SolarSystemClockComponent } from '../solar-system-clock/solar-system-clock.component';
 import { MorseCodeClockComponent } from '../morse-code-clock/morse-code-clock.component';
 import { UserEmailComponent } from '../../user-email/user-email.component';
@@ -36,7 +36,7 @@ import { UserEmailComponent } from '../../user-email/user-email.component';
     SolarSystemClockComponent,
     MorseCodeClockComponent,
     UserEmailComponent,
-],
+  ],
 })
 export class ClockComponent implements OnInit, OnDestroy {
   selectedClock: string = 'Analog';
@@ -61,5 +61,9 @@ export class ClockComponent implements OnInit, OnDestroy {
 
   onTimeChanged(newTime: Date) {
     this.timeService.setTime(newTime);
+  }
+
+  resetTimeToNow() {
+    this.timeService.setTime(new Date());
   }
 }

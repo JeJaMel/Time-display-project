@@ -1,4 +1,3 @@
-// user-email.component.ts
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Subscription } from 'rxjs';
@@ -14,7 +13,7 @@ import { CommonModule } from '@angular/common';
   `,
   standalone: true,
   imports: [CommonModule],
-  styleUrls: ['./user-email.component.css'], // Add CSS file
+  styleUrls: ['./user-email.component.css'], 
 })
 export class UserEmailComponent implements OnInit, OnDestroy {
   userEmail: string | null = null;
@@ -38,18 +37,16 @@ export class UserEmailComponent implements OnInit, OnDestroy {
   displayEmail() {
     this.showEmail = true;
 
-    // Wait for 5 seconds, then apply the fade-out animation
     setTimeout(() => {
       const emailTextElement = document.querySelector('.email-text');
       if (emailTextElement) {
-        emailTextElement.classList.add('fade-out'); // Add fade-out class
+        emailTextElement.classList.add('fade-out');
       }
 
-      // Wait for the fade-out animation to complete (0.5s), then hide the email
       setTimeout(() => {
         this.showEmail = false;
         if (emailTextElement) {
-          emailTextElement.classList.remove('fade-out'); // Remove fade-out class for future use
+          emailTextElement.classList.remove('fade-out'); 
         }
       }, 500); // Match the duration of the fade-out animation
     }, 3000); // Wait 5 seconds before starting fade-out
